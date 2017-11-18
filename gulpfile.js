@@ -2,6 +2,7 @@
 const gulp = require('gulp');
 const autoprefixer = require('gulp-autoprefixer');
 const cssnano = require('gulp-cssnano');
+const babel = require('gulp-babel');
 const browserSync = require('browser-sync');
 const htmlmin = require('gulp-htmlmin');
 
@@ -29,6 +30,13 @@ gulp.task('prefixerAndCssNano', function(){
         .pipe(gulp.dest('build/css'))
 });
 
+//MINIFY JS 
+gulp.task('minify', function(){
+	gulp.src('src/js/*.js')
+	.pipe(babel())
+	.pipe(gulp.dest('build/js'));
+});
+
 //----- BROWSER SYNC -----//
 gulp.task('browserSync', function() {
     browserSync.init({
@@ -39,16 +47,17 @@ gulp.task('browserSync', function() {
 });
 
 //----- RUN MULTIPLE TASKS AT ONCE IN AN ARRAY -----//
-gulp.task('default', ['message', 'copyHtml','prefixerAndCssNano']);
+gulp.task('default', ['message','prefixerAndCssNano', 'minify', 'copyHtml']);
 
 //----- GULP WATCH -----//
 gulp.task('watch',['browserSync'], function(){
 	gulp.watch('src/css/*.css',['prefixerAndCssNano']);
+	gulp.watch('src/js/*.js',['minify']);
 	gulp.watch('src/*.html',['copyHtml']);
 	
 	//reload browser when the files change
 	gulp.watch('build/css/*.css', browserSync.reload);
+ 	gulp.watch('build/*.js', browserSync.reload);
 	gulp.watch('build/*.html', browserSync.reload);
- 
 });
  
