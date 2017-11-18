@@ -22,6 +22,7 @@
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
+    "bootstrap": "^4.0.0-alpha.6",
     "browser-sync": "^2.18.13",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.0.0",
