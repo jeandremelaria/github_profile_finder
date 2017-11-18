@@ -1,0 +1,31 @@
+{
+  "name": "github_profile_finder",
+  "version": "1.0.0",
+  "description": "Github profile finder using AJAX and github API",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "github",
+    "profile",
+    "finder",
+    "ajax",
+    "api",
+    "jeandre",
+    "melaria",
+    "www.jeandremelaria.nl",
+    "html5",
+    "css3"
+  ],
+  "author": "Jeandre Melaria",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-htmlmin": "^3.0.0"
+  }
+}
