@@ -21,7 +21,6 @@ Last modified:
 <meta name="author" content="Jeandre Melaria">
 <meta name="copyright" content="Jeandre Melaria">
 <meta name="robots" content="index, nofollow">
-
 <title>Github profile finder</title>
 
 <!-- Bootstrap CSS -->
@@ -29,10 +28,30 @@ Last modified:
 
 <!-- CSS -->
 <link rel="stylesheet" type="text/css" href="css/style.css">
-
 </head>
 <body>
 <div class="container">
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-lg-12"> <img id="logo" class="logo" src="img/Octocat.png" alt="Github logo"> </div>
+    <div id="form-container" class="col-md-12 col-sm-12 col-lg-12">
+      <form>
+        <div class="input-group margin">
+          <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon2">
+          <button id="go-button" class="btn btn-info" type="button">Go!</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <footer>
+  <a href="https://github.com/" target="_blank">Github</a>
+  
+   profile finder powered by 
+   <a href="http://jeandremelaria.nl/" target="_blank">Jeandre Melaria</a>
+   
+   </footer>
+</div>
+
+<!--<div class="container">
 	<form>
     	<div class="form-group card">
             <label><h3 class="card-header card-info">Github Username:</h3></label>
@@ -40,8 +59,12 @@ Last modified:
         </div>
     </form>
 	<div id="profile"></div>
-</div>
-<script src="js/ajax.js"></script>
+</div>--> 
+
+<script src="js/layout.js"></script>
+<script src="js/ajax.js"></script> 
+<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../node_modules/tether/dist/js/tether.min.js"></script>
 <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 </html>

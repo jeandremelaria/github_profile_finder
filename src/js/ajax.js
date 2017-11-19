@@ -9,7 +9,7 @@ Project type: Email newsletter template.
 File created date: 18.10.2017
 Last modified:
 */
-
+/*
 function getProfile(){
 	var username ='bradtraversy';	
 	
@@ -81,3 +81,4 @@ function getProfile(){
 // Calling the function
 getProfile();
 
+*/

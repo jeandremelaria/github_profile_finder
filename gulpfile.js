@@ -3,8 +3,9 @@ const gulp = require('gulp');
 const autoprefixer = require('gulp-autoprefixer');
 const cssnano = require('gulp-cssnano');
 const babel = require('gulp-babel');
-const browserSync = require('browser-sync');
+const imagemin = require('gulp-imagemin');
 const htmlmin = require('gulp-htmlmin');
+const browserSync = require('browser-sync');
 
 
 //----- LOG MESSAGE -----//
@@ -37,6 +38,13 @@ gulp.task('minify', function(){
 	.pipe(gulp.dest('build/js'));
 });
 
+//MINIFY IMAGE
+gulp.task('imagemin', function(){
+	gulp.src('src/img/*')
+	.pipe(imagemin())
+	.pipe(gulp.dest('build/img'));
+});
+
 //----- BROWSER SYNC -----//
 gulp.task('browserSync', function() {
     browserSync.init({
@@ -47,17 +55,19 @@ gulp.task('browserSync', function() {
 });
 
 //----- RUN MULTIPLE TASKS AT ONCE IN AN ARRAY -----//
-gulp.task('default', ['message','prefixerAndCssNano', 'minify', 'copyHtml']);
+gulp.task('default', ['message','prefixerAndCssNano', 'minify','imagemin','copyHtml']);
 
 //----- GULP WATCH -----//
 gulp.task('watch',['browserSync'], function(){
 	gulp.watch('src/css/*.css',['prefixerAndCssNano']);
 	gulp.watch('src/js/*.js',['minify']);
+	gulp.watch('src/img/*',['imagemin']);
 	gulp.watch('src/*.html',['copyHtml']);
 	
 	//reload browser when the files change
 	gulp.watch('build/css/*.css', browserSync.reload);
- 	gulp.watch('build/*.js', browserSync.reload);
+ 	gulp.watch('build/js/*.js', browserSync.reload);
+	gulp.watch('build/img/*', browserSync.reload);
 	gulp.watch('build/*.html', browserSync.reload);
 });
  

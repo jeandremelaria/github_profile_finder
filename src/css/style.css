@@ -12,46 +12,25 @@ Project type: Pricing table template.
 File created date: 28.10.2017
 Last modified: 28.10.2017 
 */
-.card {
+.logo {
+  width: 10rem;
+  display: block;
+  margin: 8rem auto 0 auto;
+}
+.logo-nav {
+  width: 4rem;
+  display: block;
+  margin: 1rem auto 0 auto;
+}
+.form-container-nav {
+  background-color: #d3d3d3;
+}
+.margin {
   margin-top: 1rem;
+  margin-right: auto;
+  margin-bottom: 1rem;
+  margin-left: auto;
 }
-.user-row {
-  margin-bottom: 14px;
-}
-.user-row:last-child {
-  margin-bottom: 0;
-}
-.dropdown-user {
-  margin: 13px 0;
-  padding: 5px;
-  height: 100%;
-}
-.dropdown-user:hover {
-  cursor: pointer;
-}
-.table-user-information > tbody > tr {
-  border-top: 1px solid #dddddd;
-}
-.table-user-information > tbody > tr:first-child {
-  border-top: 0;
-}
-.table-user-information > tbody > tr > td {
-  border-top: 0;
-}
-.toppad {
-  margin-top: 20px;
-}
-img {
-  margin: 1rem;
-  width: 15rem;
-}
-ul {
-  list-style: none;
-}
-h3 {
-  margin: 0.5rem 1rem 0.5rem 1rem;
-}
-input {
-  width: auto!important;
-  margin: 1rem;
+.nav-logo {
+  width: 4rem;
 }

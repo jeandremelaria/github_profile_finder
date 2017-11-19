@@ -18,62 +18,39 @@ Last modified: 28.10.2017
 // - Media query
 
 // === === Variables === === //
-@margin:1rem;
 
+
+
+// === === Functions === === //
+.margin(@margin-top:1rem; @margin-right:auto; @margin-bottom:1rem; @margin-left:auto;){
+	margin-top:@margin-top;
+	margin-right:@margin-right;
+	margin-bottom:@margin-bottom;
+	margin-left:@margin-left;
+}
 // === === Mixings === === //
-.card{
-	margin-top:@margin;
+.logo{
+	width:10rem;
+	display: block;
+	margin: 8rem auto 0 auto;
+}
+.logo-nav{
+	width:4rem;
+	display: block;
+	margin: 1rem auto 0 auto;
+}
+.form-container-nav{
+	background-color:#d3d3d3;
+}
+.margin{
+	.margin;
 }
 
-.user-row {
-    margin-bottom: 14px;
+.nav-logo{
+	width:4rem;
 }
 
-.user-row:last-child {
-    margin-bottom: 0;
-}
-
-.dropdown-user {
-    margin: 13px 0;
-    padding: 5px;
-    height: 100%;
-}
-
-.dropdown-user:hover {
-    cursor: pointer;
-}
-
-.table-user-information > tbody > tr {
-    border-top: 1px solid rgb(221, 221, 221);
-}
-
-.table-user-information > tbody > tr:first-child {
-    border-top: 0;
-}
-
-
-.table-user-information > tbody > tr > td {
-    border-top: 0;
-}
-.toppad
-{margin-top:20px;
-}
 // === === Global === === //
-img{
-	margin:@margin;
-	width:15rem;
-}
-ul{
-	list-style:none;	
-}
-
-h3{
-	margin:0.5rem 1rem 0.5rem 1rem;
-}
-input{
-	width:auto!important;
-	margin:1rem;
-	
-}
 
 
+/////////////////////////

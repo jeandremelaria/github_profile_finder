@@ -9,15 +9,15 @@ Project type: Email newsletter template.
 File created date: 18.10.2017
 Last modified:
 */
-
-function getProfile() {
-  var username = 'bradtraversy';
-
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function () {
-    if (xhttp.readyState == 4 && xhttp.status == 200) {
-      var user = JSON.parse(xhttp.responseText);
-      document.getElementById('profile').innerHTML = `
+/*
+function getProfile(){
+	var username ='bradtraversy';	
+	
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function(){
+		if(xhttp.readyState == 4 && xhttp.status == 200){
+			var user = JSON.parse(xhttp.responseText);
+			document.getElementById('profile').innerHTML = `
 			
 <div class="container">
 	<div class="card">
@@ -71,12 +71,14 @@ function getProfile() {
 
 </div>		
 			`;
-    }
-  };
-
-  xhttp.open('GET', 'https://api.github.com/users/' + username, true);
-  xhttp.send();
+		}
+	}
+	
+	xhttp.open('GET', 'https://api.github.com/users/'+username, true);
+	xhttp.send();
 }
 
 // Calling the function
 getProfile();
+
+*/
