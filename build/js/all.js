@@ -9,15 +9,15 @@ Project type: Email newsletter template.
 File created date: 18.10.2017
 Last modified:
 */
-/*
-function getProfile(){
-	var username ='bradtraversy';	
-	
-	var xhttp = new XMLHttpRequest();
-	xhttp.onreadystatechange = function(){
-		if(xhttp.readyState == 4 && xhttp.status == 200){
-			var user = JSON.parse(xhttp.responseText);
-			document.getElementById('profile').innerHTML = `
+
+function getProfile() {
+  var username = 'bradtraversy';
+
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function () {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+      var user = JSON.parse(xhttp.responseText);
+      document.getElementById('profile').innerHTML = `
 			
 <div class="container">
 	<div class="card">
@@ -53,15 +53,15 @@ function getProfile(){
                       </tr>
                     </tbody>
                   </table>
+		
                   <a href="https://api.github.com/users/bradtraversy/repos" type="button" class="btn btn-primary">Public repos <span class="badge badge-light">${user.public_repos}</span></a>
-				  <a href="https://api.github.com/users/bradtraversy/gists{/gist_id}" type="button" class="btn btn-primary">Public gists <span class="badge badge-light">${user.public_gists}</span></a>
-				  
+				  <a href="https://api.github.com/users/bradtraversy/gists{/gist_id}"  type="button" class="btn btn-primary">Public gists <span class="badge badge-light">${user.public_gists}</span></a>
 				   <a href="https://github.com/" type="button" class="btn btn-primary">Visit Github</a>
                 </div>
               </div>
             </div>
                  <div class="card-footer">
-      <small class="text-muted">Last updated ${user.updated_at}</small>
+      <small class="text-muted">Last updated ${Date(user.updated_at)}</small>
     </div>
             
           </div>
@@ -71,14 +71,23 @@ function getProfile(){
 
 </div>		
 			`;
-		}
-	}
-	
-	xhttp.open('GET', 'https://api.github.com/users/'+username, true);
-	xhttp.send();
+    }
+  };
+
+  xhttp.open('GET', 'https://api.github.com/users/' + username, true);
+  xhttp.send();
 }
 
 // Calling the function
 getProfile();
 
-*/
+//${user.updated_at}
+
+// Listen for event
+document.getElementById("go-button").addEventListener("click", toggleClass);
+
+function toggleClass() {
+	// Add classes
+	document.getElementById("logo").classList.add("logo-nav");
+	document.getElementById("form-container").classList.add("form-container-nav");
+}

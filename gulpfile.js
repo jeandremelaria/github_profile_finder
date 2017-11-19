@@ -3,6 +3,7 @@ const gulp = require('gulp');
 const autoprefixer = require('gulp-autoprefixer');
 const cssnano = require('gulp-cssnano');
 const babel = require('gulp-babel');
+const concat = require('gulp-concat');
 const imagemin = require('gulp-imagemin');
 const htmlmin = require('gulp-htmlmin');
 const browserSync = require('browser-sync');
@@ -35,6 +36,7 @@ gulp.task('prefixerAndCssNano', function(){
 gulp.task('minify', function(){
 	gulp.src('src/js/*.js')
 	.pipe(babel())
+	.pipe(concat('all.js'))
 	.pipe(gulp.dest('build/js'));
 });
 

@@ -9,7 +9,7 @@ Project type: Email newsletter template.
 File created date: 18.10.2017
 Last modified:
 */
-/*
+
 function getProfile(){
 	var username ='bradtraversy';	
 	
@@ -53,15 +53,15 @@ function getProfile(){
                       </tr>
                     </tbody>
                   </table>
+		
                   <a href="https://api.github.com/users/bradtraversy/repos" type="button" class="btn btn-primary">Public repos <span class="badge badge-light">${user.public_repos}</span></a>
-				  <a href="https://api.github.com/users/bradtraversy/gists{/gist_id}" type="button" class="btn btn-primary">Public gists <span class="badge badge-light">${user.public_gists}</span></a>
-				  
+				  <a href="https://api.github.com/users/bradtraversy/gists{/gist_id}"  type="button" class="btn btn-primary">Public gists <span class="badge badge-light">${user.public_gists}</span></a>
 				   <a href="https://github.com/" type="button" class="btn btn-primary">Visit Github</a>
                 </div>
               </div>
             </div>
                  <div class="card-footer">
-      <small class="text-muted">Last updated ${user.updated_at}</small>
+      <small class="text-muted">Last updated ${Date(user.updated_at)}</small>
     </div>
             
           </div>
@@ -81,4 +81,5 @@ function getProfile(){
 // Calling the function
 getProfile();
 
-*/
+
+//${user.updated_at}
