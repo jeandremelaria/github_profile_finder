@@ -11,13 +11,19 @@ Last modified:
 */
 
 function getProfile() {
-  var username = 'bradtraversy';
 
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function () {
-    if (xhttp.readyState == 4 && xhttp.status == 200) {
-      var user = JSON.parse(xhttp.responseText);
-      document.getElementById('profile').innerHTML = `
+  // Get username
+  var username = document.getElementById("username").value;
+
+  if (username == null || username == '') {
+    document.getElementById("username").placeholder = "Please enter a username";
+  } else {
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+      if (xhttp.readyState == 4 && xhttp.status == 200) {
+        var user = JSON.parse(xhttp.responseText);
+        document.getElementById('profile').innerHTML = `
 			
 <div class="container">
 	<div class="card">
@@ -54,8 +60,8 @@ function getProfile() {
                     </tbody>
                   </table>
 		
-                  <a href="https://api.github.com/users/bradtraversy/repos" type="button" class="btn btn-primary">Public repos <span class="badge badge-light">${user.public_repos}</span></a>
-				  <a href="https://api.github.com/users/bradtraversy/gists{/gist_id}"  type="button" class="btn btn-primary">Public gists <span class="badge badge-light">${user.public_gists}</span></a>
+                  <a href="#" type="button" class="btn btn-primary">Public repos <span class="badge badge-light">${user.public_repos}</span></a>
+				  <a href="#" type="button" class="btn btn-primary">Public gists <span class="badge badge-light">${user.public_gists}</span></a>
 				   <a href="https://github.com/" type="button" class="btn btn-primary">Visit Github</a>
                 </div>
               </div>
@@ -71,17 +77,16 @@ function getProfile() {
 
 </div>		
 			`;
-    }
-  };
+      }
+    };
 
-  xhttp.open('GET', 'https://api.github.com/users/' + username, true);
-  xhttp.send();
+    xhttp.open('GET', 'https://api.github.com/users/' + username, true);
+    xhttp.send();
+  }
 }
 
-// Calling the function
-getProfile();
-
-//${user.updated_at}
+// Listen for event
+document.getElementById('go-button').addEventListener('click', getProfile);
 
 // Listen for event
 document.getElementById("go-button").addEventListener("click", toggleClass);
